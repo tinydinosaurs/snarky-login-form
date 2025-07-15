@@ -1,27 +1,41 @@
-# Welcome to React Router!
+# Welcome to Snarky Login Form
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Have you ever wanted a form that you could always log into no matter what email and password combination you used? Did you want that form to take you to the least informative page possible? Did you want to be mocked if you tried signing up or getting password help?
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Cool, this is the log in form for you.
 
-## Features
+## But Seriously
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+I got laid off after 8 years at **REDACTED** (hey former employer, feel free to hire me back 🙂). I want to keep my skills fresh. I also haven't created or contributed to Github repos much in those 8 years, because frankly I wanted to do things other than write code when I wasn't at work.
 
-## Getting Started
+I did this project because I haven't built a form -- any kind of form -- from scratch in just forever. I figured it'd be a good exercise, and it was. I learned about Vite, and I got my feet wet with Tailwind.
+
+## Tools and Such
+
+-   React + Typescript
+-   Vite
+-   pnpm
+-   React Router
+-   Tailwind CSS
+-   Local storage
+-   Validation without a library
+
+## Next Steps
+
+-   Add some tests
+-   Create a sign up process
+-   Authenticate
+-   Add Github actions to run tests on PRs
+-   Deploy somewhere or other
+
+## Run This App!
 
 ### Installation
 
 Install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
@@ -29,59 +43,9 @@ npm install
 Start the development server with HMR:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+The application will be available at `http://localhost:5173`.
 
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+You should be able to log in with a valid email address and a password that's 16 characters minimum. Play around. Have fun.
