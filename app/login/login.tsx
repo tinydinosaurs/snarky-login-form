@@ -1,4 +1,3 @@
-import { Link } from 'react-router';
 import { Form } from '../form/form';
 
 export function Login() {

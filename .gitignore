@@ -1,6 +1,31 @@
+# macOS
 .DS_Store
+
+# Node
 /node_modules/
 
-# React Router
-/.react-router/
+# Build & cache
 /build/
+/.vite/
+/dist/
+*.tsbuildinfo
+
+# React Router (if used)
+/.react-router/
+
+# Logs
+*.log
+
+# Cypress artifacts
+coverage/
+.nyc_output/
+cypress/screenshots/
+cypress/videos/
+
+# IDE/editor junk
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*

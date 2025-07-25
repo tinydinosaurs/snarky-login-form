@@ -1,6 +1,8 @@
 import React from 'react';
 import type { Route } from './+types/home';
 import { Link } from 'react-router';
+import useAppNavigate from '../hooks/useAppNavigate';
+
 export function meta({}: Route.MetaArgs) {
 	return [
 		{ title: 'Landing Page' },
@@ -11,7 +13,7 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
-export default function Landing() {
+export default function Landing({ useNavigateHook = useAppNavigate }) {
 	const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
 	React.useEffect(() => {
@@ -22,8 +24,11 @@ export default function Landing() {
 		}
 	}, []);
 
+	const navigate = useNavigateHook();
+
 	const handleLogOut = () => {
 		localStorage.clear();
+		navigate('/');
 	};
 
 	return (
@@ -37,14 +42,12 @@ export default function Landing() {
 					</h1>
 				</header>
 				<p>
-					<Link to="/">
-						<button
-							onClick={handleLogOut}
-							className="flex w-full justify-center rounded-md bg-fuchsia-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-fuchsia-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
-						>
-							{isLoggedIn ? 'Log out' : 'Log in'}
-						</button>
-					</Link>
+					<button
+						onClick={handleLogOut}
+						className="flex w-full justify-center rounded-md bg-fuchsia-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-fuchsia-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
+					>
+						{isLoggedIn ? 'Log out' : 'Take me to the login page'}
+					</button>
 				</p>
 			</div>
 		</main>

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+// in your Form.tsx or Login.tsx
+import useAppNavigate from '../hooks/useAppNavigate';
+
+// const navigate = u();seAppNavigate
 
 export interface FormState {
 	email: string;
@@ -12,7 +15,7 @@ function validateEmail(email: string) {
 	return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-export const Form = () => {
+export const Form = ({ useNavigateHook = useAppNavigate }) => {
 	const [formState, setFormState] = useState<FormState>({
 		email: '',
 		password: '',
@@ -20,7 +23,7 @@ export const Form = () => {
 	const [errors, setErrors] = useState<{ email?: string; password?: string }>(
 		{}
 	);
-	const navigate = useNavigate();
+	const navigate = useNavigateHook();
 
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -71,7 +74,7 @@ export const Form = () => {
 						<input
 							id="email"
 							name="email"
-							type="text"
+							type="email"
 							autoComplete="off"
 							data-1p-ignore
 							className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-fuchsia-600 sm:text-sm/6"
@@ -102,12 +105,12 @@ export const Form = () => {
 							Password
 						</label>
 						<div className="text-sm">
-							<Link
-								to="/sadface"
-								className="font-semibold text-fuchsia-600 hover:text-fuchsia-500"
+							<button
+								className="font-semibold text-fuchsia-600 hover:text-fuchsia-500 cursor-pointer"
+								onClick={() => navigate('/sadface')}
 							>
 								Forgot password?
-							</Link>
+							</button>
 						</div>
 					</div>
 					<div className="mt-2">
@@ -147,13 +150,13 @@ export const Form = () => {
 				</div>
 			</form>
 
-			<p className="mt-10 text-center text-sm/6 text-gray-500">
-				<Link
-					to="/sadface"
-					className="font-semibold text-fuchsia-600 hover:text-fuchsia-500"
+			<p className="mt-4 text-center text-sm/6 text-gray-500">
+				<button
+					className="font-semibold text-fuchsia-600 hover:text-fuchsia-500 cursor-pointer"
+					onClick={() => navigate('/sadface')}
 				>
 					Need help logging in?
-				</Link>
+				</button>
 			</p>
 		</div>
 	);

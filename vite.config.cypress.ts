@@ -1,17 +1,16 @@
-import { reactRouter } from '@react-router/dev/vite';
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import tailwindcss from '@tailwindcss/vite';
 import istanbul from 'vite-plugin-istanbul';
 
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
-		reactRouter(),
 		tsconfigPaths(),
 		istanbul({
 			cypress: true,
 			requireEnv: false,
 		}),
+		// DO NOT include reactRouter() here!
 	],
 });
