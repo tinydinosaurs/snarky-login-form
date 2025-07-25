@@ -19,10 +19,10 @@ I did this project because I haven't built a form -- any kind of form -- from sc
 -   Tailwind CSS
 -   Local storage
 -   Validation without a library
+-   Component tests with Cypress
 
 ## Next Steps
 
--   Add some tests
 -   Create a sign up process
 -   Authenticate
 -   Add Github actions to run tests on PRs
